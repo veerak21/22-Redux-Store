@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   ApolloProvider,
+  InMemoryCache,
 
 } from '@apollo/client';
 // import { setContext } from '@apollo/client/link/context';
@@ -22,6 +23,7 @@ import OrderHistory from './pages/OrderHistory';
 
 
 const client = new ApolloClient({
+  cache: new InMemoryCache(),
   request: (operation) => {
     const token = localStorage.getItem('id_token')
     operation.setContext({

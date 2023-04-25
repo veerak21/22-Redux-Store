@@ -22,7 +22,7 @@
  
 
 
- ### The heroku deployed application is: 
+
 
   
 

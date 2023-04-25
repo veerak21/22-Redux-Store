@@ -1,7 +1,7 @@
 # Project Title: 22-Redux-Store
 
 ## Description:
-  Refactoring the e-commerce platform from Activity 26. So that it uses Redux.
+  This is an e-commerce platform (from Activity 26) that was refactored using Redux library.
 
 
 ## Installation:
@@ -13,18 +13,13 @@
   - Apollo-server-express
   - Apollo-client
   - JWT(jsonwebtoken)
-  - npm install redux
+  - npm install @reduxjs/toolkit react-redux
 
 
 ## Usage:  
 
-
- 
-
-
-
-
-  
+   This is a Redux-based e-commerce platform for managing the global state. 
+Upon reviewing the app's store, one can find that the app uses a Redux store instead of the Context API.
 
  
 ## Questions?

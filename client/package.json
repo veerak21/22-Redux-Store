@@ -14,7 +14,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.2"
+    "react-scripts": "4.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "stripe": "^8.146.0"
   },
   "scripts": {
     "start": "react-scripts start",

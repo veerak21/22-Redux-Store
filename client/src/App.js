@@ -2,9 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
-  InMemoryCache,
   ApolloProvider,
-  createHttpLink,
+
 } from '@apollo/client';
 // import { setContext } from '@apollo/client/link/context';
 
@@ -15,11 +14,13 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 // import { StoreProvider } from './utils/GlobalState';
-import Success from './pages/Success';
-import OrderHistory from './pages/OrderHistory';
 // redux hook and store
 import { Provider } from 'react-redux';
 import store from '../src/redux/store';
+import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
+
+
 const client = new ApolloClient({
   request: (operation) => {
     const token = localStorage.getItem('id_token')

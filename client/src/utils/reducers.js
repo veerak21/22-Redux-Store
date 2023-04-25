@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+// import { useReducer } from 'react';
 import {
   UPDATE_PRODUCTS,
   ADD_TO_CART,
@@ -11,11 +11,11 @@ import {
   TOGGLE_CART,
 } from './actions';
 
-// TODO: To get a better understand of how a reducer works - add comments to the various actions in the reducer
+
+// Create a function that will handle combining two objects. Accepts state and an action as an argument.
 export const reducer = (state, action) => {
   switch (action.type) {
-    // TODO: Add a comment describing the functionality of the UPDATE_PRODUCTS case
-    // Your comment here
+    // if action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
     case UPDATE_PRODUCTS:
       return {
         ...state,
@@ -28,14 +28,13 @@ export const reducer = (state, action) => {
         cartOpen: true,
         cart: [...state.cart, action.product],
       };
-
+    // add multiple to cart
     case ADD_MULTIPLE_TO_CART:
       return {
         ...state,
         cart: [...state.cart, ...action.products],
       };
-    // TODO: Add a comment describing the functionality of the UPDATE_CART_QUANTITY case
-    // Your comment here
+
     case UPDATE_CART_QUANTITY:
       return {
         ...state,
@@ -48,8 +47,7 @@ export const reducer = (state, action) => {
         }),
       };
 
-    // TODO: Add a comment describing the functionality of the REMOVE_FROM_CART case
-    // Your comment here
+    // Remove from cart
     case REMOVE_FROM_CART:
       let newState = state.cart.filter((product) => {
         return product._id !== action._id;
@@ -73,21 +71,20 @@ export const reducer = (state, action) => {
         ...state,
         cartOpen: !state.cartOpen,
       };
-
+    // if action type value is the value of `UPDATE_CATEGORIES`, return a new state object with an updated categories array
     case UPDATE_CATEGORIES:
       return {
         ...state,
         categories: [...action.categories],
       };
-
+    // if action type value is the value of `UPDATE_CURRENT_CATEGORY`, return a new string instead of an array
     case UPDATE_CURRENT_CATEGORY:
       return {
         ...state,
         currentCategory: action.currentCategory,
       };
 
-    // TODO: Add a comment describing what the default case is for
-    // Your comment here
+    // Default to returning the state as is in our switch statement
     default:
       return state;
   }
